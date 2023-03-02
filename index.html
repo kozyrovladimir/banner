@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./slyle.css">
+</head>
+<body>
+  <div class="wrapper"></div>
+  <script>
+    const wrapper = document.querySelector('.wrapper');
+    const windowWidth = window.innerWidth;
+    const img = document.createElement('img');
+    img.style.width = '100%';
+    wrapper.appendChild(img);
+    const imgNumber = Math.floor(Math.random() * 6) + 1;
+    if (windowWidth < 320) {
+        img.src = `./assets/banner_${imgNumber}_xs.png`;
+    } else if (windowWidth >= 320 && windowWidth < 768) {
+        img.src = `./assets/banner_${imgNumber}_s.png`;
+    } else if (windowWidth >= 768 && windowWidth < 1920) {
+        img.src = `./assets/banner_${imgNumber}_m.png`;
+    } else {
+        img.src = `./assets/banner_${imgNumber}_l.png`;
+    }
+  </script>
+</body>
+</html>
